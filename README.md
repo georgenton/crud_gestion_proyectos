@@ -58,28 +58,49 @@ El proyecto sigue una arquitectura **MVC (Model-View-Controller)**, organizada d
 
 ## 3. Estructura del Proyecto
 
-gestion_proyectos/
-│
-├── app/
-│ ├── Controllers/
-│ │ ├── ProyectoController.php
-│ │ ├── EmpleadoController.php
-│ │ └── AsignacionController.php
-│ ├── Models/
-│ │ ├── Proyecto.php
-│ │ ├── Empleado.php
-│ │ └── Asignacion.php
-│ └── Config/
-│ └── Database.php
-│
-├── public/
-│ ├── index.php
-│ └── .htaccess
-│
-├── routes/
-│ └── web.php
-│
-└── README.md
+gestion_proyectos/  
+│  
+├── app/  
+│ ├── Controllers/  
+│ │ ├── ProyectoController.php  
+│ │ ├── EmpleadoController.php  
+│ │ └── AsignacionController.php  
+│ ├── Models/  
+│ │ ├── Proyecto.php  
+│ │ ├── Empleado.php  
+│ │ └── Asignacion.php  
+│ └── Config/  
+│ └── Database.php  
+│  
+├── public/  
+│ ├── index.php  
+│ └── .htaccess  
+│  
+├── routes/  
+│ └── web.php  
+│  
+└── README.md  
+
+## Descripción de Carpetas y Archivos
+
+- **app/**: Contiene la lógica del negocio dividida en controladores, modelos y configuraciones.
+  - **Controllers/**: Los controladores manejan las solicitudes HTTP, procesan los datos mediante los modelos y devuelven las respuestas correspondientes.
+  - **Models/**: Los modelos representan las tablas de la base de datos y contienen la lógica para interactuar con los datos.
+  - **Config/**: Contiene la configuración de la base de datos.
+
+- **public/**: Carpeta pública del proyecto. Incluye el punto de entrada principal (`index.php`) y el archivo `.htaccess` para redireccionar las solicitudes.
+
+- **routes/**: Define las rutas de la aplicación. Todas las rutas son gestionadas en el archivo `web.php`.
+
+- **vendor/**: Carpeta generada automáticamente por Composer, contiene las dependencias y bibliotecas necesarias para el proyecto.
+
+- **composer.json**: Archivo de configuración para Composer, utilizado para gestionar las dependencias del proyecto.
+
+- **README.md**: Archivo de documentación del proyecto que proporciona una visión general de la estructura del proyecto, la base de datos, la arquitectura y cómo utilizar la API.
+
+---
+
+Este esquema proporciona una visión clara de cómo se organiza el proyecto y qué funciones cumple cada parte de la estructura.
 
 
 ## 4. Ejemplos de Uso de Todas las Rutas
@@ -144,10 +165,3 @@ gestion_proyectos/
 
 - **URL**: `DELETE /proyectos/{id}`
 
-### Otros Ejemplos
-
-El mismo patrón de solicitudes **GET**, **POST**, **PUT** y **DELETE** se aplica a las rutas de **Empleados** y **Asignaciones**.
-
-## Conclusión
-
-Este proyecto sirve como una base para crear aplicaciones CRUD básicas utilizando PHP y MySQL. Siguiendo la estructura de MVC y utilizando un archivo `.htaccess`, se logra una separación clara entre la lógica de negocio, la base de datos y la gestión de rutas.
