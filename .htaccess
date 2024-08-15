@@ -1,0 +1,13 @@
+# Habilitar reescritura de URL
+RewriteEngine On
+
+# Establecer la base de la URL si el proyecto no está en la raíz del dominio
+# RewriteBase /crud.desarrollo.live
+
+# Redirigir todas las solicitudes al index.php dentro de la carpeta public
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [L]
+
+# Opcional: Redirigir la raíz del dominio a la carpeta public
+RewriteRule ^$ public/index.php [L]
